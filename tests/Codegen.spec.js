@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://rahulshettyacademy.com/');
+  await page.getByRole('link', { name: 'Courses', exact: true }).click();
+  await page.getByRole('link', { name: 'Lifetime Access' }).click();
+  await page.getByRole('link', { name: 'Home' }).click();
+  await page.getByRole('link', { name: 'VIEW ALL COURSES' }).click();
+  await page.getByPlaceholder('Find a product').click();
+  await page.getByPlaceholder('Find a product').fill('Cypress');
+  await page.getByLabel('Search Courses').click();
+  await page.getByText('Cypress-Modern Automation Testing from Scratch + Framework Available until Learn Cypress (Future of Automation) for front end Web testing +Integration testing(XHR / API) with real time examples Rahul Shetty % COMPLETE $').click();
+  await page.getByRole('link', { name: 'Mentorship' }).click();
+  await page.getByRole('navigation').getByRole('link', { name: 'Job Support' }).click();
+  await page.getByRole('textbox', { name: 'Your Name*' }).click();
+  await page.getByRole('textbox', { name: 'Your Name*' }).fill('Test');
+  await page.getByPlaceholder('Your Mobile No.*', { exact: true }).click();
+  await page.getByPlaceholder('Your Mobile No.*', { exact: true }).fill('9913331319');
+  await page.getByRole('textbox', { name: 'Your Email*' }).click();
+  await page.getByRole('textbox', { name: 'Your Email*' }).fill('test@gmail.com');
+  await page.getByPlaceholder('Please explain about your').click();
+  await page.getByPlaceholder('Please explain about your').fill('Looking for Sales job');
+  await page.locator('#programming-language').selectOption('Javascript');
+  await page.locator('#sharing').first().check();
+  await page.getByText('What is your timezone? --').click();
+  await page.locator('select[name="input-timezone"]').selectOption('Asia/Kolkata');
+  await page.locator('#afford').nth(1).check();
+  await page.getByRole('button', { name: 'Send Message' }).click();
+  await page.getByRole('button', { name: 'Close' }).click();
+});
