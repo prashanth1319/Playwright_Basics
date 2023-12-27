@@ -1,0 +1,28 @@
+Run command for run the test case for specific browser from config file also specific project
+npx playwright test /tests/PageTest/blazeTest.spec.js --config playwright.configMobile.js --project=Chrome
+
+Run commad for all test
+npx playwright test
+
+Run commad for specific test case with (single test file)
+npx playwright test /tests/PageTest/blazeTest.spec.js
+
+Run a set of test files
+npx playwright test tests/todo-page/ tests/landing-page/
+
+Run tests that are in line 42 in my-spec.ts
+npx playwright test my-spec.ts:42
+
+Run the test with the title
+npx playwright test -g "add a todo item"
+
+Run tests in headed browsers
+npx playwright test --headed
+
+Run in debug mode with Playwright Inspector
+npx playwright test --debug
+
+Run tests in interactive UI mode, with a built-in watch mode (Preview)
+npx playwright test --ui
+
+
