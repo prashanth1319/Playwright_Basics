@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://qa-admin.paypenny.io/pages/transaction/withdrawal');
+  await page.goto('https://qa-admin.paypenny.io/pages/login');
+  await page.goto('https://qa-admin.paypenny.io/');
+  await page.goto('https://qa-admin.paypenny.io/pages/login');
+  await page.locator('#country').selectOption('United Kingdom');
+  await page.getByPlaceholder('Email').click();
+  await page.getByPlaceholder('Email').click();
+  await page.getByPlaceholder('Email').fill('paypennyadminstageuk@ypmail.com');
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').fill('Paypenny@567');
+  await page.locator('form').click();
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('link', { name: 'Transactions' }).click();
+  await page.locator('li').filter({ hasText: /^Transactions$/ }).getByRole('link').click();
+  await page.getByRole('button', { name: 'Filters' }).click();
+  await page.locator('div').filter({ hasText: /^Select Status$/ }).nth(1).click();
+  await page.getByText('pending', { exact: true }).click();
+  await page.getByTestId('accept-ade75264-1608-4209-bfaf-1a14bb7e2157').click();
+  await page.getByRole('button', { name: 'Approve' }).click();
+  await page.getByTestId('accept-ade75264-1608-4209-bfaf-1a14bb7e2157').click();
+  await page.getByRole('heading', { name: 'Are you sure, you want to' }).click();
+  await page.getByRole('button', { name: 'Filter', exact: true }).click();
+  await page.getByTestId('accept-ade75264-1608-4209-bfaf-1a14bb7e2157').click();
+  await page.getByRole('button', { name: 'Approve' }).click();
+  await page.getByTestId('accept-a6d00934-6e51-4b2a-8c9f-7d9be86a2ac9').click();
+  await page.getByRole('button', { name: 'Approve' }).click();
+});
