@@ -13,6 +13,7 @@ const { on } = require('events');
  */
 module.exports = defineConfig({
   testDir: './tests',
+  retries:1,
   /* Maximum time one test can run for. */
   timeout: 30*1000,
   expect:{
@@ -31,15 +32,21 @@ module.exports = defineConfig({
         trace: 'retain-on-failure',//off, on
         headless: true,
         screenshot: 'off',
+        video: 'retain-on-failure',
+        viewport : {width:720,height:720},
       }
     },
     {
-      name:"Chrome",
+      name:"chrome",
         use: {
           browserName: 'chromium',
           trace: 'retain-on-failure',//off, on
           headless: false,
+          //This property is used for ignore to https error from some websites
+          ignoreHTTPSErrors: true,
           screenshot: 'on',
+          video: 'retain-on-failure',
+          viewport : {width:720,height:720},
         }
     },
     {
@@ -50,6 +57,8 @@ module.exports = defineConfig({
           trace: 'retain-on-failure',//off, on
           headless: true,
           screenshot: 'off',
+          video: 'retain-on-failure',
+          viewport : {width:720,height:720},
         }
 
     }

@@ -31,7 +31,8 @@ module.exports = defineConfig({
         trace: 'retain-on-failure',//off, on
         headless: true,
         screenshot: 'off',
-        viewport : {width:720,height:720},
+        video: 'retain-on-failure',
+        ignoreHTTPSErrors: true,
       }
     },
     {
@@ -42,6 +43,8 @@ module.exports = defineConfig({
           headless: false,
           screenshot: 'on',
           ...devices['iPhone 14 Pro Max'],
+          video: 'retain-on-failure',
+          ignoreHTTPSErrors: true,
         }
     },
     {
@@ -52,6 +55,8 @@ module.exports = defineConfig({
           trace: 'retain-on-failure',//off, on
           headless: true,
           screenshot: 'off',
+          video: 'retain-on-failure',
+          ignoreHTTPSErrors: true,
         }
 
     }

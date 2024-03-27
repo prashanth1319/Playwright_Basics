@@ -3,6 +3,9 @@ const { LoginPage } = require('../../pageObjects/LoginPage');
 const { HomePage } = require('../../pageObjects/HomePage');
 //const {POM_manager} = require('../../pageObjects/POM_manager');
 
+
+//test.describe.configure({mode:'parallel'})
+//test.describe.configure({mode:'serial'})//if any test fail further test will skip
 test('app flow', async({browser})=>
 {
 

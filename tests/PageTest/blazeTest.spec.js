@@ -11,7 +11,7 @@ test('test', async({page})=>
     //Login
     // user='prashudp45@gmail.com';
     // password='Prashu@123';
-    const login = poManager.loginblaze();
+    const login = poManager.loginBlaze();
     await login.blazeUrl();
     await login.loginBlaze('prashudp45@gmail.com','Prashu@123');
     //await page.waitForTimeout(5000);

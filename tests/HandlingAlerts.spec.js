@@ -40,6 +40,6 @@ await expect(page.locator("#displayed-text")).toBeHidden();
 
 test.only('Visual',async({page})=>
 {
-    await page.goto("https://www.google.com/");
+    await page.goto("https://www.asianpaints.com/");
     expect(await page.screenshot()).toMatchSnapshot('homepage.png');
 })

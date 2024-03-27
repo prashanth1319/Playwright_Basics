@@ -25,6 +25,7 @@ module.exports = defineConfig({
     trace: 'retain-on-failure',//off, on
     headless: false,
     screenshot: 'on',
+    video: 'retain-on-failure'
   },
 
   /* Configure projects for major browsers */

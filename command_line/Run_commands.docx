@@ -25,4 +25,11 @@ npx playwright test --debug
 Run tests in interactive UI mode, with a built-in watch mode (Preview)
 npx playwright test --ui
 
+Run specs test cases by tags - add “@Web” in name of Test
+command - npx playwright test —grep @Web
+
+command line for generating Allure reports
+Install Aluren command - npm i -D @playwright/test allure-playwright (one time)
+command - step 2 - allure generate ./allure-results --clean
+          Step 3 - allure open ./allure-report
 
